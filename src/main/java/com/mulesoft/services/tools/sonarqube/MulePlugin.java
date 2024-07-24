@@ -1,5 +1,6 @@
 package com.mulesoft.services.tools.sonarqube;
 
+import com.mulesoft.services.tools.sonarqube.codescan.License;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.sonar.api.Plugin;
@@ -40,6 +41,8 @@ public class MulePlugin implements Plugin {
 
 		// Added Profile
 		context.addExtension(MuleQualityProfile.class);
+
+		context.addExtension(License.class);
 
 		context.addExtension(PropertyDefinition.builder(MuleLanguage.FILE_SUFFIXES_KEY)
 				.defaultValue(MuleLanguage.FILE_SUFFIXES_DEFAULT_VALUE).name("File Suffixes")

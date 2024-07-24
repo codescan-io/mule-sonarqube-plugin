@@ -1,5 +1,7 @@
 package com.mulesoft.services.tools.sonarqube.sensor;
 
+import com.mulesoft.services.tools.sonarqube.codescan.AddonStatus;
+import com.mulesoft.services.tools.sonarqube.codescan.License;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -32,6 +34,12 @@ public class MuleSensor implements Sensor {
 
 	SAXBuilder saxBuilder = new SAXBuilder();
 
+	private final License license;
+
+	public MuleSensor(License license) {
+		this.license = license;
+	}
+
 	@Override
 	public void describe(SensorDescriptor descriptor) {
 		descriptor.onlyOnLanguage(MuleLanguage.LANGUAGE_KEY);
@@ -44,6 +52,13 @@ public class MuleSensor implements Sensor {
 		if (logger.isDebugEnabled()) {
 			logger.debug("Executing Mule Sensor");
 		}
+
+		AddonStatus addonStatus = license.isMulesoftEnabled();
+		if (!addonStatus.getEnabled()) {
+			logger.info(addonStatus.getMessage());
+			return;
+		}
+		logger.info(addonStatus.getMessage());
 
 		FileSystem fs = context.fileSystem();
 
