@@ -46,6 +46,7 @@ public class License {
     public AddonStatus isMulesoftEnabled() {
         AddonStatus addonStatus = new AddonStatus();
         addonStatus.setAddon("mulesoft");
+        addonStatus.setEnabled(false);
         try {
             Optional<String> urlString = settings.get("sonar.host.url");
             Optional<String> organization = settings.get("sonar.organization");
@@ -54,7 +55,7 @@ public class License {
                 addonStatus.setOrganization(organization.get());
                 URL url = new URL(urlString.get());
                 String host = url.getHost();
-                if (host.endsWith(".codescan.io")) {
+                if (host.endsWith(".codescan.io") || host.endsWith(".autorabit.com")) {
                     HttpGet licenseCheckRequest = new HttpGet(
                             url.getProtocol() + "://" + host + "/_codescan/billing/organization/" + organization.get()
                                     + "/addons/mulesoft");
