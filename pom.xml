@@ -16,12 +16,12 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<sonar.version>9.9.0.65466</sonar.version>
+		<sonar.version>10.6.0.92116</sonar.version>
 		<sonar.apiVersion>7.7</sonar.apiVersion>
 		<jaxb.api.version>2.3.3</jaxb.api.version>
 		<jaxb.version>2.3.2</jaxb.version>
 		<httpclient.version>4.5.14</httpclient.version>
-		<sonar.plugin.api.version>9.14-CODESCAN</sonar.plugin.api.version>
+		<sonar.plugin.api.version>10.7-CODESCAN</sonar.plugin.api.version>
 
 	</properties>
 
