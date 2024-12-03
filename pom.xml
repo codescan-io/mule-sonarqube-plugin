@@ -116,6 +116,7 @@
 					<pluginClass>com.mulesoft.services.tools.sonarqube.MulePlugin</pluginClass>
 					<pluginName>MulePlugin</pluginName>
 					<pluginKey>mulevalidationsonarqubeplugin-mule</pluginKey>
+					<requiredForLanguages>mule</requiredForLanguages>
 					<!-- advanced properties can be set here. See paragraph "Advanced Build
 						Properties". -->
 				</configuration>

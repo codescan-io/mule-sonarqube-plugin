@@ -57,8 +57,8 @@ public class License {
                 String host = url.getHost();
                 if (host.endsWith(".codescan.io") || host.endsWith(".autorabit.com")) {
                     HttpGet licenseCheckRequest = new HttpGet(
-                            url.getProtocol() + "://" + host + "/_codescan/billing/organization/" + organization.get()
-                                    + "/addons/mulesoft");
+                            url.getProtocol() + "://" + host + "/_codescan/organizations/" + organization.get()
+                                    + "/billing/addons/mulesoft");
                     String login = StringUtils.stripToEmpty(settings.get("sonar.login").orElse(""));
                     if (!login.isEmpty()) {
                         String authorization =
