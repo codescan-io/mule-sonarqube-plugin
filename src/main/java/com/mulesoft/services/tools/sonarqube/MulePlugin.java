@@ -48,11 +48,6 @@ public class MulePlugin implements Plugin {
 				.description("List of suffixes for files to analyze.").subCategory(GENERAL)
 				.category(MuleLanguage.LANGUAGE_NAME).multiValues(true).onQualifiers(Qualifiers.PROJECT).build());
 
-		context.addExtension(PropertyDefinition.builder(MuleLanguage.FILE_PATTERNS_KEY)
-				.defaultValue(MuleLanguage.FILE_PATTERNS_DEFVALUE).name("Mule File Patterns")
-				.description("List of mule patterns for files to analyze.").subCategory(GENERAL)
-				.category(MuleLanguage.LANGUAGE_NAME).multiValues(true).onQualifiers(Qualifiers.PROJECT).build());
-
 		context.addExtensions(MuleMetrics.class, ConfigurationFilesSensor.class, MuleSizeRating.class,
 				MuleFlowCount.class, MuleSubFlowCount.class, MuleTransformationCount.class, CoverageSensor.class,
 				MUnitSensor.class);

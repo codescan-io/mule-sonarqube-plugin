@@ -24,21 +24,10 @@ public class MuleLanguage extends AbstractLanguage {
 
 	public static final String FILE_SUFFIXES_KEY = "sonar.mule.file.suffixes";
 	public static final String FILE_SUFFIXES_DEFAULT_VALUE = ".xml";
-	public static final String FILE_PATTERNS_KEY = "sonar.lang.patterns.mule";
-	public static final String FILE_PATTERNS_DEFVALUE = "**/*.xml";
 
 	public MuleLanguage(Configuration config) {
 		super("mule", LANGUAGE_NAME);
 		this.config = config;
-	}
-
-	@Override
-	public String[] filenamePatterns() {
-		String[] patterns = config.getStringArray(FILE_PATTERNS_KEY);
-		if (patterns == null || patterns.length == 0) {
-			patterns = StringUtils.split(FILE_PATTERNS_DEFVALUE, ',');
-		}
-		return patterns;
 	}
 
 	@Override
