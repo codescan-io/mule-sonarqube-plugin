@@ -5,6 +5,7 @@ public class AddonStatus {
     private String organization;
     private Boolean enabled;
     private String message;
+    private int quantity;
 
     public String getAddon() {
         return addon;
@@ -36,5 +37,13 @@ public class AddonStatus {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 }
