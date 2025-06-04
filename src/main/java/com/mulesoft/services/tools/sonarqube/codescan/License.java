@@ -59,7 +59,7 @@ public class License {
                     HttpGet licenseCheckRequest = new HttpGet(
                             url.getProtocol() + "://" + host + "/_codescan/organizations/" + organization.get()
                                     + "/billing/addons/mulesoft");
-                    String login = StringUtils.stripToEmpty(settings.get("sonar.login").orElse(""));
+                    String login = StringUtils.stripToEmpty(settings.get("sonar.login").orElse(settings.get("sonar.token").orElse("")));
                     if (!login.isEmpty()) {
                         String authorization =
                                 login + ":" + StringUtils.stripToEmpty(settings.get("sonar.password").orElse(""));
