@@ -2,7 +2,6 @@ package com.mulesoft.services.tools.sonarqube.language;
 
 import java.util.Arrays;
 
-import org.apache.commons.lang3.StringUtils;
 import org.sonar.api.config.Configuration;
 import org.sonar.api.resources.AbstractLanguage;
 
