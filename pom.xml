@@ -5,7 +5,7 @@
 
 	<groupId>com.mulesoft.services</groupId>
 	<artifactId>mule-validation-sonarqube-plugin</artifactId>
-	<version>2.2.2</version>
+	<version>2.2.1</version>
 	<packaging>jar</packaging>
 
 	<url>http://maven.apache.org</url>
@@ -20,7 +20,7 @@
 		<jaxb.api.version>2.3.3</jaxb.api.version>
 		<jaxb.version>2.3.2</jaxb.version>
 		<httpclient.version>4.5.14</httpclient.version>
-		<sonar.plugin.api.version>10.11-CODESCAN</sonar.plugin.api.version>
+		<sonar.plugin.api.version>10.14-CODESCAN</sonar.plugin.api.version>
 
 	</properties>
 
