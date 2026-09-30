@@ -23,7 +23,7 @@ import com.mulesoft.services.tools.sonarqube.sensor.MuleSensor;
 public class MulePlugin implements Plugin {
 
 	// public static final String LANGUAGE_NAME = "Mule";
-	private static final String GENERAL = "General";
+	private static final String GENERAL = "Mule Language Settings";
 
 	Logger logger = LoggerFactory.getLogger(getClass());
 
@@ -44,7 +44,7 @@ public class MulePlugin implements Plugin {
 		context.addExtension(License.class);
 
 		context.addExtension(PropertyDefinition.builder(MuleLanguage.FILE_SUFFIXES_KEY)
-				.defaultValue(MuleLanguage.FILE_SUFFIXES_DEFAULT_VALUE).name("File Suffixes")
+				.defaultValue(MuleLanguage.FILE_SUFFIXES_DEFAULT_VALUE).name("Legacy File Suffixes")
 				.description("List of suffixes for files to analyze.").subCategory(GENERAL)
 				.category(MuleLanguage.LANGUAGE_NAME).multiValues(true).onQualifiers(Qualifiers.PROJECT).build());
 

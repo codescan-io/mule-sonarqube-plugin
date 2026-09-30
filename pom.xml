@@ -6,7 +6,7 @@
 	<groupId>com.mulesoft.services</groupId>
 	<artifactId>mule-validation-sonarqube-plugin</artifactId>
 	<version>2.2.5</version>
-	<packaging>jar</packaging>
+	<packaging>sonar-plugin</packaging>
 
 	<url>http://maven.apache.org</url>
 	<description>Sonar Plugin for Mule Projects</description>
@@ -29,11 +29,13 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13.1</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.sonarsource.api.plugin</groupId>
 			<artifactId>sonar-plugin-api</artifactId>
 			<version>${sonar.plugin.api.version}</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.sonarsource.sonarqube</groupId>
@@ -55,11 +57,13 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.25</version>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-slf4j-impl</artifactId>
 			<version>2.26.1</version>
+            <scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>jaxen</groupId>
@@ -96,6 +100,12 @@
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
 			<version>${httpclient.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-logging</groupId>
+					<artifactId>commons-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.commons</groupId>
@@ -109,13 +119,13 @@
 			<plugin>
 				<groupId>org.sonarsource.sonar-packaging-maven-plugin</groupId>
 				<artifactId>sonar-packaging-maven-plugin</artifactId>
-				<version>1.17</version>
+				<version>1.24.0.2621</version>
 				<extensions>true</extensions>
 				<configuration>
 					<!-- the entry-point class that extends org.sonar.api.SonarPlugin -->
 					<pluginClass>com.mulesoft.services.tools.sonarqube.MulePlugin</pluginClass>
 					<pluginName>MulePlugin</pluginName>
-					<pluginKey>mulevalidationsonarqubeplugin-mule</pluginKey>
+					<pluginKey>mulevalidationsonarqubeplugin</pluginKey>
 					<requiredForLanguages>mule</requiredForLanguages>
 					<!-- advanced properties can be set here. See paragraph "Advanced Build
 						Properties". -->
