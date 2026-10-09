@@ -18,6 +18,7 @@ import com.mulesoft.services.tools.sonarqube.metrics.MUnitSensor;
 import com.mulesoft.services.tools.sonarqube.metrics.MuleMetrics;
 import com.mulesoft.services.tools.sonarqube.profile.MuleQualityProfile;
 import com.mulesoft.services.tools.sonarqube.rule.MuleRulesDefinition;
+import com.mulesoft.services.tools.sonarqube.sensor.MuleFileSuffixesSensor;
 import com.mulesoft.services.tools.sonarqube.sensor.MuleSensor;
 
 public class MulePlugin implements Plugin {
@@ -32,7 +33,7 @@ public class MulePlugin implements Plugin {
 		logger.info("Configuring Mule Plugin");
 
 		// Added Language
-		context.addExtensions(MuleLanguage.class, MuleSensor.class);
+		context.addExtensions(MuleLanguage.class, MuleSensor.class, MuleFileSuffixesSensor.class);
 		// context.addExtension(getProperties());
 
 		// Added Rules
