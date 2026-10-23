@@ -6,7 +6,7 @@
 	<groupId>com.mulesoft.services</groupId>
 	<artifactId>mule-validation-sonarqube-plugin</artifactId>
 	<version>2.2.8</version>
-	<packaging>jar</packaging>
+	<packaging>sonar-plugin</packaging>
 
 	<url>http://maven.apache.org</url>
 	<description>Sonar Plugin for Mule Projects</description>
